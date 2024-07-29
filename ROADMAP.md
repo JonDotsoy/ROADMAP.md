@@ -27,6 +27,9 @@ The following roadmap provides an overview of the planned features, their expect
 | New Features Development | In Progress | April 30, 2023 |
 -->
 
+| Feature | Status | Expected Completion Date |
+| --- | --- | --- |
+
 ## Proposals
 
 The following proposal outlines a potential feature and its expected timeline:
