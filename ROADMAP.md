@@ -35,9 +35,8 @@ The following roadmap provides an overview of the planned features, their expect
 The following proposal outlines a potential feature and its expected timeline:
 
 <!--
-### Proposal: Enhanced User Experience
+### Proposal: [Insert Proposal Title]
 
-This proposal aims to enhance the user experience by introducing a new dashboard that provides real-time analytics and performance metrics.
-
+[Description]
 -->
 
