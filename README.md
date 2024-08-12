@@ -58,3 +58,7 @@ curl https://raw.githubusercontent.com/JonDotsoy/ROADMAP.md/develop/template/ROA
 ```
 
 This will download the latest version of the ROADMAP.md file and save it to a local file named `ROADMAP.md`.
+
+## License
+
+This project is published under the MIT License. You can view the full text of the license in the file [LICENSE](./LICENSE).
