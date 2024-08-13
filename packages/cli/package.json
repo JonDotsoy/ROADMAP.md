@@ -9,6 +9,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@jondotsoy/flags": "^2.0.3",
     "mdast-util-from-markdown": "^2.0.1",
     "mdast-util-to-string": "^4.0.0"
   }
