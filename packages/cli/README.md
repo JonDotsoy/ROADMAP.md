@@ -26,6 +26,16 @@ roadmap --list .
 
 This command searches for ROADMAP or ROADMAP.md files in all directories within the current directory tree and displays a summary of the pending tasks.
 
+### Initialize Roadmap File
+
+To create an initial ROADMAP.md file in the current directory, run:
+
+```shell
+roadmap init
+```
+
+This command will create an empty ROADMAP.md file with a basic structure to help you get started with organizing your tasks.
+
 ## Future Developments
 
 For more information about the project and its next steps, please review our [ROADMAP](../../ROADMAP.md).
