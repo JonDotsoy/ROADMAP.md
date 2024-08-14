@@ -30,6 +30,7 @@ The following roadmap provides an overview of the planned features, their expect
 | Feature | Status | Expected Completion Date |
 | --- | --- | --- |
 | [Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated](#client-for-terminal-read-roadmapmd-and-describe-tasks-annotated) | On Design | September 2024 |
+| [Develop Markdown Parser Library](#develop-markdown-parser-library) | On Design | September 2024 |
 
 ## Proposals
 
@@ -84,3 +85,31 @@ Tasks annotated:
 *   The client must be able to read the content of the file `ROADMAP.md`
 *   The client must identify the tasks annotated in the document using the syntax `# - <task>`
 *   The client must display a summary of the tasks annotated, including their state (`Active` or `Planned`) and description
+
+### Develop Markdown Parser Library
+
+Create a library that reads markdown files and returns a JSON value. The library should be able to identify and format relevant information from the file content, such as:
+
+The expected output should be an array of JSON objects, where each object represents a task or feature from the markdown file.
+
+**Example Usage**
+
+```js
+const tasks = await parse(markdownText);
+// [
+//   {
+//     "title": "Task title",
+//     "description": "This is an example of how the library works.",
+//     "status": "In development",
+//     "release_date": "2024-08"
+//   }
+// ]
+```
+
+**Model Output**
+
+*   Title
+*   Brief description
+*   Status: Can be customized
+*   Expected Release Date (`release_date`): Date anticipated to have this feature ready for release.
+*   Expected Completion Date: If already completed, it can be released in an official version.
