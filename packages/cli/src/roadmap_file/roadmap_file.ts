@@ -59,7 +59,7 @@ export class RoadmapFile {
   }
 
   static async fromFile(location: LikeURL) {
-    const locationUrl = new URL(location.toString());
+    const locationUrl = new URL(location.toString(), "file://");
     const payload = await fs.readFile(locationUrl, "utf-8");
     const markdown = mdastUtilFromMarkdown.fromMarkdown(payload, "utf-8");
     return new RoadmapFile(locationUrl, markdown);
