@@ -3,8 +3,6 @@ on:
     branches:
       - "develop"
       - "feature/cli"
-    paths:
-      - packages/cli
 
 name: Release
 
