@@ -1,0 +1,48 @@
+on:
+  push:
+    branches:
+      - "develop"
+      - "feature/cli"
+    paths:
+      - packages/cli
+
+name: Release
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release-please.outputs.release_created }}
+      prs_created: ${{ steps.release-please.outputs.prs_created }}
+      pr: ${{ steps.release-please.outputs.pr }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+        if: steps.release-please.outputs.pr
+        with:
+          ref: ${{ fromJSON(steps.release-please.outputs.pr).headBranchName }}
+      - uses: oven-sh/setup-bun@v1
+      - if: steps.release-please.outputs.pr
+        working-directory: packages/cli
+        run: |
+          make preparepkg
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/googleapis/release-please-action.git"
+          git checkout ${{ fromJSON(steps.release-please.outputs.pr).headBranchName }}
+          git add pkg.ts
+          git commit -n -m "change: upgrade pkg.ts file"
+          git push
+      - name: publish release
+        if: steps.release-please.outputs.releases_created == 'true'
+        run: gh workflow run --repo JonDotsoy/homebrew-core refresh.yml -F repo_name=JonDotsoy/q-project -F tag=${{ steps.release-please.outputs.tag_name }}
+        env:
+          GH_TOKEN: ${{ secrets.REFRESH_GITHUB_TOKEN }}
+
