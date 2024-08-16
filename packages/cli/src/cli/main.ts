@@ -19,11 +19,10 @@ export const main = async (args: string[]) => {
     rule(() => true, restArgumentsAt("describe")),
   ];
 
-  const mainOptions = flags<MainOptions>(args, { describe: [] }, mainRules);
+  const mainOptions = flags<MainOptions>(args, {}, mainRules);
 
   if (mainOptions.init) return init(mainOptions.init);
 
-  if (mainOptions.describe) return describe(mainOptions.describe);
-
-  throw new Error("Missing argument");
+  mainOptions.describe ??= [];
+  return describe(mainOptions.describe);
 };
