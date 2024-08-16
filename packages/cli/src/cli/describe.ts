@@ -1,10 +1,4 @@
-import {
-  flag,
-  flags,
-  isStringAt,
-  rule,
-  type Rule,
-} from "@jondotsoy/flags";
+import { flag, flags, isStringAt, rule, type Rule } from "@jondotsoy/flags";
 import { RoadmapFile } from "../roadmap_file/roadmap_file.js";
 import * as path from "node:path";
 import { styleText } from "../common/style-text.js";
