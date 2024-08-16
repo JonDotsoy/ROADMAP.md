@@ -23,7 +23,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target-branch: feature/cli
-          prerelease: demo
       - uses: actions/checkout@v4
         if: steps.release-please.outputs.pr
         with:
