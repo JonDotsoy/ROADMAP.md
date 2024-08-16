@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1-beta.1](https://github.com/JonDotsoy/ROADMAP.md/compare/cli-v0.1.0-beta.1...cli-v0.1.1-beta.1) (2024-08-16)
+
+
+### Bug Fixes
+
+* update bun lock file in cli package ([add0983](https://github.com/JonDotsoy/ROADMAP.md/commit/add0983549fa27541bf80a9f84e88fc577181924))
+
 ## 0.1.0-beta.1 (2024-08-16)
 
 
