@@ -4,6 +4,12 @@ import * as path from "node:path";
 import { styleText } from "../common/style-text.js";
 
 async function* findFiles(cwd: string, pattern: string) {
+  const mainFile = new URL(pattern, new URL(`${cwd}/`, `file://`));
+
+  if (await Bun.file(mainFile).exists()) {
+    yield mainFile.pathname;
+  }
+
   for await (const fileLocation of new Bun.Glob(pattern).scan({
     cwd: cwd,
     absolute: true,
@@ -26,7 +32,7 @@ export const describe = async (args: string[]) => {
   };
 
   const rules: Rule<DescribeOptions>[] = [
-    rule(flag("--cwd"), isStringAt("cwd")),
+    rule(flag("-c", "--cwd"), isStringAt("cwd")),
     rule((arg, ctx) => {
       if (ctx.flags.pattern) return false;
       ctx.argValue = arg;
@@ -46,7 +52,7 @@ export const describe = async (args: string[]) => {
   );
 
   if (!filePathFound) {
-    console.error(`Cannot found`);
+    console.error(`Cannot found ${pattern}`);
     return;
   }
 
