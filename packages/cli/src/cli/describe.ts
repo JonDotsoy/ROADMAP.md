@@ -13,6 +13,7 @@ async function* findFiles(cwd: string, pattern: string) {
   for await (const fileLocation of new Bun.Glob(pattern).scan({
     cwd: cwd,
     absolute: true,
+    onlyFiles: true,
   })) {
     yield fileLocation;
   }
