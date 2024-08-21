@@ -41,3 +41,38 @@ test("should return the title of the first task", async () => {
   );
   expect(await roadmap.listTasks()).toContainEqual({ title: "First task" });
 });
+
+test.only("should correctly parse and extract roadmap tasks from a Markdown file", async () => {
+  const roadmap = await RoadmapFile.fromFile(
+    await demoFile(
+      "## Roadmap\n" +
+        "\n" +
+        "### 🚧 Active\n" +
+        "\n" +
+        "| Feature | Expected Release Date |\n" +
+        "| --- | --- |\n" +
+        "| [Task 2](#task-2) | August 2024 |\n" +
+        "\n" +
+        "### ⏳ Planned\n" +
+        "\n" +
+        "| Feature | Status | Expected Completion Date |\n" +
+        "| --- | --- | --- |\n" +
+        "| [Task 1](#task-1) | In Progress | September 2024 |\n",
+    ),
+  );
+
+  expect(await roadmap.infoTasks()).toMatchObject([
+    {
+      title: "Task 1",
+      status: "In Progress",
+      expectedCompletionDate: "September 2024",
+      expectedReleaseDate: undefined,
+    },
+    {
+      title: "Task 2",
+      status: "Done",
+      expectedReleaseDate: "August 2024",
+      expectedCompletionDate: undefined,
+    },
+  ]);
+});
