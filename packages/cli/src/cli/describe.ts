@@ -2,6 +2,10 @@ import { flag, flags, isStringAt, rule, type Rule } from "@jondotsoy/flags";
 import { RoadmapFile } from "../roadmap_file/roadmap_file.js";
 import * as path from "node:path";
 import { styleText } from "@jondotsoy/style-text";
+import { render, componentModules } from "@jondotsoy/console-draw";
+import { intld } from "../common/intl-dictionary.js";
+
+const h = componentModules.createElement.bind(componentModules);
 
 async function* findFiles(cwd: string, pattern: string) {
   const mainFile = new URL(pattern, new URL(`${cwd}/`, `file://`));
@@ -62,8 +66,32 @@ export const describe = async (args: string[]) => {
   const roadmap = await RoadmapFile.fromFile(filePathFound);
   const tasks = await roadmap.listTasks();
 
+  const columns = process.stdout.columns ?? 80;
+
   console.log(
-    `${styleText("bold", "Tasks")} available in ${styleText("green", fileRelativePathFound)}:\n` +
-      tasks.map((t) => `  ${t.title}\n`).join(""),
+    render(
+      h("div", [
+        h(
+          "text",
+          intld`${styleText("bold", "Tasks")} available in ${styleText("green", fileRelativePathFound)}:`,
+        ),
+        ...tasks.map((task) => {
+          return h(
+            "columns",
+            {
+              gap: 2,
+              columns: 3,
+              columnsTemplate: [{ width: 1 }, { width: 15 }],
+            },
+            [
+              h("text", ""),
+              h("text", intld`${task.status}`),
+              h("text", task.title),
+            ],
+          );
+        }),
+      ]),
+      { width: columns },
+    ),
   );
 };
