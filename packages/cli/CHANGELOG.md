@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0-beta.1](https://github.com/JonDotsoy/ROADMAP.md/compare/cli-v0.1.1-beta.1...cli-v0.2.0-beta.1) (2024-08-26)
+
+
+### Features
+
+* add infoTasks() function to read tasks status from roadmap file ([6abedbe](https://github.com/JonDotsoy/ROADMAP.md/commit/6abedbe83284866460a75a50fcd640a836804fad))
+* add main-help.ts file for CLI commands display ([4542490](https://github.com/JonDotsoy/ROADMAP.md/commit/45424904833d91ad324785c2846924bc5b35b088))
+* add renderMainHelp function and improve cli logic with new flags and rules ([ec7dc74](https://github.com/JonDotsoy/ROADMAP.md/commit/ec7dc74359891b60fb9d55874219ae1d8d2346e5))
+* update cli/describe.ts to handle Bun file existence check ([457acde](https://github.com/JonDotsoy/ROADMAP.md/commit/457acde24b4abaef09c7f5ab6a7e478438ef7bc1))
+
+
+### Performance Improvements
+
+* refactor findFiles function to include onlyFiles option and improve glob scanning ([45ecbd5](https://github.com/JonDotsoy/ROADMAP.md/commit/45ecbd5b473c9f8b5178c68e6bf3ac3c204d1f2a))
+* refactor style-text import in cli describe ([0f60975](https://github.com/JonDotsoy/ROADMAP.md/commit/0f60975ea2ac288d1a23b5ad2b598eab2ed9281c))
+
 ## [0.1.1-beta.1](https://github.com/JonDotsoy/ROADMAP.md/compare/cli-v0.1.0-beta.1...cli-v0.1.1-beta.1) (2024-08-16)
 
 
