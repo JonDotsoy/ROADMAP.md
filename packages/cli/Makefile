@@ -11,6 +11,10 @@ build-roadmap_template:
 	'$$ROADMAP_TEMPLATE | @base64d | @json | "export const roadmapTemplate = " + . + ";"' \
 	-r > src/roadmap_template.ts
 
+build-dictionary:
+	cat src/common/dictionary.yaml | yq '. | @json | "export const dictionary: Record<string, Record<string, string[]>> = " + .' > src/common/dictionary.ts
+	bunx prettier -w src/common/dictionary.ts
+
 install:
 	bun install
 
