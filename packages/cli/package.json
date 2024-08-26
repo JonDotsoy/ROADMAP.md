@@ -18,7 +18,8 @@
     "mdast-util-gfm-table": "^2.0.0",
     "mdast-util-to-markdown": "^2.1.0",
     "mdast-util-to-string": "^4.0.0",
-    "micromark-extension-gfm-table": "^2.1.0"
+    "micromark-extension-gfm-table": "^2.1.0",
+    "yaml": "^2.5.0"
   },
   "scripts": {
     "fmt": "prettier -w ."
