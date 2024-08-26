@@ -1,4 +1,5 @@
 import { render, componentModules } from "@jondotsoy/console-draw";
+import { intld } from "../common/intl-dictionary";
 const h = componentModules.createElement.bind(componentModules);
 
 const envColumns = parseInt(process.env.COLUMNS ?? "80");
@@ -12,9 +13,11 @@ export const renderMainHelp = () => {
     "roadmap init",
   ];
 
-  const usageKeyWord = "Usage";
+  const usageKeyWord = intld`Usage`;
 
-  const commands = [["init", "Initialize the ROADMAP.md file if not exists"]];
+  const commands = [
+    ["init", intld`Initialize the ROADMAP.md file if not exists`],
+  ];
 
   return render(
     h("div", [
@@ -34,7 +37,7 @@ export const renderMainHelp = () => {
         ],
       ),
       h("text"),
-      h("text", "Commands:"),
+      h("text", `${intld`Commands`}:`),
       ...commands.map(([command, description]) =>
         h(
           "columns",
