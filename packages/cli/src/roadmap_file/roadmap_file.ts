@@ -5,6 +5,8 @@ import { gfmTable } from "micromark-extension-gfm-table";
 import * as mdastUtilFromMarkdown from "mdast-util-from-markdown";
 import * as mdastUtilToMarkdown from "mdast-util-to-markdown";
 
+const toRef = (str: string) => str.toLocaleLowerCase().replace(/\W/g, "-");
+
 type LikeURL = { toString(): string };
 
 /**
@@ -155,6 +157,7 @@ export class RoadmapFile {
 
         if (taskColumn !== null) {
           return dbTable.values.map((val) => ({
+            ref: toRef(val[taskColumn!]),
             title: val[taskColumn!],
             status: val[statusColumn!],
             expectedCompletionDate: val[expectedCompletionDateColumn!],
@@ -176,6 +179,7 @@ export class RoadmapFile {
   }
 
   async listTasks() {
+    const infoTasks = await this.infoTasks();
     const proposalsHeader = this.markdown.children.find(
       (n) => n.type === "heading" && /proposals/i.test(nodeToTextContent(n)),
     ) as Heading | undefined;
@@ -206,8 +210,12 @@ export class RoadmapFile {
     });
 
     return listTasks.map((heading) => {
+      const title = nodeToTextContent(heading);
+      const ref = toRef(title);
+
       return {
-        title: nodeToTextContent(heading),
+        title: title,
+        ...infoTasks.find((t) => t.ref === ref),
       };
     });
   }
