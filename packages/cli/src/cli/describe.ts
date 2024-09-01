@@ -1,9 +1,10 @@
-import { flag, flags, isStringAt, rule, type Rule } from "@jondotsoy/flags";
+import { flag, flags, isBooleanAt, isStringAt, rule, type Rule } from "@jondotsoy/flags";
 import { RoadmapFile } from "../roadmap_file/roadmap_file.js";
 import * as path from "node:path";
 import { styleText } from "@jondotsoy/style-text";
 import { render, componentModules } from "@jondotsoy/console-draw";
 import { intld } from "../common/intl-dictionary.js";
+import * as YAML from "yaml";
 
 const h = componentModules.createElement.bind(componentModules);
 
@@ -33,10 +34,14 @@ export const describe = async (args: string[]) => {
   type DescribeOptions = {
     cwd: string;
     pattern: string;
+    json: boolean
+    yaml: boolean
     // noDepth: boolean;
   };
 
   const rules: Rule<DescribeOptions>[] = [
+    rule(flag("-j", "--json"), isBooleanAt("json")),
+    rule(flag("-y", "--yaml"), isBooleanAt("yaml")),
     rule(flag("-c", "--cwd"), isStringAt("cwd")),
     rule((arg, ctx) => {
       if (ctx.flags.pattern) return false;
@@ -67,6 +72,8 @@ export const describe = async (args: string[]) => {
   const tasks = await roadmap.listTasks();
 
   const columns = process.stdout.columns ?? 80;
+  if (options.json) return console.log(JSON.stringify(tasks, null, 2)); 
+  if (options.yaml) return console.log(YAML.stringify(tasks));
 
   console.log(
     render(
