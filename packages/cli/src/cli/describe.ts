@@ -2,11 +2,9 @@ import { flag, flags, isBooleanAt, isStringAt, rule, type Rule } from "@jondotso
 import { RoadmapFile } from "../roadmap_file/roadmap_file.js";
 import * as path from "node:path";
 import { styleText } from "@jondotsoy/style-text";
-import { render, componentModules } from "@jondotsoy/console-draw";
+import { render, c } from "@jondotsoy/console-draw";
 import { intld } from "../common/intl-dictionary.js";
 import * as YAML from "yaml";
-
-const h = componentModules.createElement.bind(componentModules);
 
 async function* findFiles(cwd: string, pattern: string) {
   const mainFile = new URL(pattern, new URL(`${cwd}/`, `file://`));
@@ -72,18 +70,18 @@ export const describe = async (args: string[]) => {
   const tasks = await roadmap.listTasks();
 
   const columns = process.stdout.columns ?? 80;
-  if (options.json) return console.log(JSON.stringify(tasks, null, 2)); 
+  if (options.json) return console.log(JSON.stringify(tasks, null, 2));
   if (options.yaml) return console.log(YAML.stringify(tasks));
 
   console.log(
     render(
-      h("div", [
-        h(
+      c("div", [
+        c(
           "text",
           intld`${styleText("bold", "Tasks")} available in ${styleText("green", fileRelativePathFound)}:`,
         ),
         ...tasks.map((task) => {
-          return h(
+          return c(
             "columns",
             {
               gap: 2,
@@ -91,9 +89,9 @@ export const describe = async (args: string[]) => {
               columnsTemplate: [{ width: 1 }, { width: 15 }],
             },
             [
-              h("text", ""),
-              h("text", intld`${task.status}`),
-              h("text", task.title),
+              c("text", ""),
+              c("text", intld`${task.status}`),
+              c("text", task.title),
             ],
           );
         }),

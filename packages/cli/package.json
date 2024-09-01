@@ -10,7 +10,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@jondotsoy/console-draw": "^0.1.2",
+    "@jondotsoy/console-draw": "^0.2.6",
     "@jondotsoy/flags": "^2.0.3",
     "@jondotsoy/style-text": "^0.9.1",
     "mdast": "^3.0.0",
