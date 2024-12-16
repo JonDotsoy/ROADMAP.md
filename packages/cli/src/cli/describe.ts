@@ -1,5 +1,5 @@
 import { flag, flags, isBooleanAt, isStringAt, rule, type Rule } from "@jondotsoy/flags";
-import { RoadmapFile } from "../roadmap_file/roadmap_file.js";
+import { RoadmapFile } from "@jondotsoy/roadmap-parse";
 import * as path from "node:path";
 import { styleText } from "@jondotsoy/style-text";
 import { render, c } from "@jondotsoy/console-draw";

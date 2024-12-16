@@ -25,6 +25,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@jondotsoy/utils-js": "^0.5.2",
     "mdast": "^3.0.0",
     "mdast-util-from-markdown": "^2.0.1",
     "mdast-util-gfm-table": "^2.0.0",
