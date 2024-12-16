@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.0-beta.1](https://github.com/JonDotsoy/ROADMAP.md/compare/cli-v0.2.0-beta.1...cli-v0.3.0-beta.1) (2024-12-16)
+
+
+### Features
+
+* add `intld` library for fast language translation and automate dictionary generation ([1db0536](https://github.com/JonDotsoy/ROADMAP.md/commit/1db05363e4db4ebadc1dd0e46d255d29caebf576))
+* add support for json and yaml output formats to describe command ([661562a](https://github.com/JonDotsoy/ROADMAP.md/commit/661562a65d2feff30d34ac18eb1ceb6f80efb5f1))
+* add toRef function and use it in RoadmapFile class ([5fb8cf8](https://github.com/JonDotsoy/ROADMAP.md/commit/5fb8cf8210147cefa11d3b1aed9a408431f8d32a))
+* bump @jondotsoy/console-draw version to 0.2.6 and update import in describe.ts ([cf86662](https://github.com/JonDotsoy/ROADMAP.md/commit/cf866622f1216451a0b4e39b7ed260f643ca8dfa))
+* migrate roadmap dependency on cli ([8d4845d](https://github.com/JonDotsoy/ROADMAP.md/commit/8d4845d4eaa7280a40c8923531a3bb16d4da199c))
+* update cli/describe.ts with new console-draw functionality and internationalization ([2bf0d6c](https://github.com/JonDotsoy/ROADMAP.md/commit/2bf0d6c6b43e456ce8b76aa826e4a5e28fdefb47))
+
+
+### Bug Fixes
+
+* update main-help.ts to use intl dictionary for dynamic translations ([bb5331d](https://github.com/JonDotsoy/ROADMAP.md/commit/bb5331dcc53e98dff798dfb8915bc5d08ce4f7e2))
+
 ## [0.2.0-beta.1](https://github.com/JonDotsoy/ROADMAP.md/compare/cli-v0.1.1-beta.1...cli-v0.2.0-beta.1) (2024-08-26)
 
 
