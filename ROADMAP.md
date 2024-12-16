@@ -31,6 +31,7 @@ The following roadmap provides an overview of the planned features, their expect
 | --- | --- | --- |
 | [Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated](#client-for-terminal-read-roadmapmd-and-describe-tasks-annotated) | In Progress | August 2024 |
 | [Develop Markdown Parser Library](#develop-markdown-parser-library) | On Design | September 2024 |
+| [UI to read roadmap on browser o webapp](#ui-to-read-roadmap-on-browser-o-webapp) | On design | September 2024 |
 
 ## Proposals
 
@@ -113,3 +114,9 @@ const tasks = await parse(markdownText);
 *   Status: Can be customized
 *   Expected Release Date (`release_date`): Date anticipated to have this feature ready for release.
 *   Expected Completion Date: If already completed, it can be released in an official version.
+
+### UI to read roadmap on browser o webapp
+
+Implement the command `roadmap --ui` to open the roadmap on the browser.
+
+This commando implement a web server on local and render the ROADMAP.md file on a web app. Also when command is used open automatically the browser with the webpage.

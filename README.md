@@ -59,6 +59,36 @@ curl https://raw.githubusercontent.com/JonDotsoy/ROADMAP.md/develop/template/ROA
 
 This will download the latest version of the ROADMAP.md file and save it to a local file named `ROADMAP.md`.
 
+## ROADMAP Command Line Interface
+
+You can use the `roadmap` command line interface to read the tasks available in this document. To install it, run:
+
+```bash
+brew install jondotsoy/core/roadmap
+```
+
+> Consult the formula here https://github.com/JonDotsoy/homebrew-core/blob/main/roadmap.rb
+
+To use it, simply execute:
+
+```bash
+$ roadmap
+# Tasks available in ROADMAP.md:
+#   Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated
+#   Develop Markdown Parser Library
+#   UI to read roadmap on browser o webapp
+```
+
+## Initialization
+
+You can also initialize a new roadmap using the `roadmap init` command. This will create a new file called `ROADMAP.md` in the current directory with a basic template.
+
+```bash
+$ roadmap init
+# Creating new ROADMAP.md file...
+# Roadmap initialized successfully!
+```
+
 ## License
 
 This project is published under the MIT License. You can view the full text of the license in the file [LICENSE](./LICENSE).
