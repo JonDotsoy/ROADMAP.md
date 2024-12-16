@@ -1,0 +1,43 @@
+{
+  "name": "@jondotsoy/roadmap-parse",
+  "version": "0.1.1",
+  "description": "Read a ROADMAP and get their parts in json format",
+  "module": "index.ts",
+  "type": "module",
+  "license": "MIT",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "libs/esm/*"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./libs/esm/roadmap_file.js",
+      "types": "./libs/esm/roadmap_file.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@jondotsoy/utils-js": "^0.5.2",
+    "mdast": "^3.0.0",
+    "mdast-util-from-markdown": "^2.0.1",
+    "mdast-util-gfm-table": "^2.0.0",
+    "micromark-extension-gfm-table": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/ROADMAP.md.git",
+    "directory": "packages/lib"
+  },
+  "scripts": {
+    "prepack": "make"
+  },
+  "files": ["libs"]
+}
