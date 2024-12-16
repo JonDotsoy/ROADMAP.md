@@ -1,6 +1,6 @@
 {
   "name": "@jondotsoy/roadmap-parse",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Read a ROADMAP and get their parts in json format",
   "module": "index.ts",
   "type": "module",
