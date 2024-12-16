@@ -16,7 +16,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Expected Release Date |
-| --- | --- |
+| ------- | --------------------- |
 
 ### ⏳ Planned
 
@@ -27,11 +27,11 @@ The following roadmap provides an overview of the planned features, their expect
 | New Features Development | In Progress | April 30, 2023 |
 -->
 
-| Feature | Status | Expected Completion Date |
-| --- | --- | --- |
-| [Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated](#client-for-terminal-read-roadmapmd-and-describe-tasks-annotated) | In Progress | August 2024 |
-| [Develop Markdown Parser Library](#develop-markdown-parser-library) | On Design | September 2024 |
-| [UI to read roadmap on browser o webapp](#ui-to-read-roadmap-on-browser-o-webapp) | On design | September 2024 |
+| Feature                                                                                                                               | Status      | Expected Completion Date |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------ |
+| [Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated](#client-for-terminal-read-roadmapmd-and-describe-tasks-annotated) | In Progress | August 2024              |
+| [Develop Markdown Parser Library](#develop-markdown-parser-library)                                                                   | On Design   | September 2024           |
+| [UI to read roadmap on browser o webapp](#ui-to-read-roadmap-on-browser-o-webapp)                                                     | On design   | September 2024           |
 
 ## Proposals
 
@@ -47,15 +47,15 @@ The following proposal outlines a potential feature and its expected timeline:
 
 Create a client for terminal that permits reading the files `ROADMAP.md` and describing what tasks are annotated in this document. The client must be able to:
 
-*   Read the content of the file `ROADMAP.md`
-*   Identify the tasks annotated in the document using the syntax `# - <task>`
-*   Show a summary of the tasks annotated, including their state (`Active` or `Planned`) and description
+- Read the content of the file `ROADMAP.md`
+- Identify the tasks annotated in the document using the syntax `# - <task>`
+- Show a summary of the tasks annotated, including their state (`Active` or `Planned`) and description
 
 The client must be able to run on any terminal that supports command-line interpretation (CLI). The expected behavior of the client is as follows:
 
-*   When executing the command `roadmap`, the client will read the content of the file `ROADMAP.md`
-*   Then, the client will identify the tasks annotated in the document and display them in the terminal
-*   Each task will be displayed with its state (`Active` or `Planned`) and description
+- When executing the command `roadmap`, the client will read the content of the file `ROADMAP.md`
+- Then, the client will identify the tasks annotated in the document and display them in the terminal
+- Each task will be displayed with its state (`Active` or `Planned`) and description
 
 **Example Output**
 
@@ -83,9 +83,9 @@ Tasks annotated:
 
 **Requirements**
 
-*   The client must be able to read the content of the file `ROADMAP.md`
-*   The client must identify the tasks annotated in the document using the syntax `# - <task>`
-*   The client must display a summary of the tasks annotated, including their state (`Active` or `Planned`) and description
+- The client must be able to read the content of the file `ROADMAP.md`
+- The client must identify the tasks annotated in the document using the syntax `# - <task>`
+- The client must display a summary of the tasks annotated, including their state (`Active` or `Planned`) and description
 
 ### Develop Markdown Parser Library
 
@@ -109,11 +109,11 @@ const tasks = await parse(markdownText);
 
 **Model Output**
 
-*   Title
-*   Brief description
-*   Status: Can be customized
-*   Expected Release Date (`release_date`): Date anticipated to have this feature ready for release.
-*   Expected Completion Date: If already completed, it can be released in an official version.
+- Title
+- Brief description
+- Status: Can be customized
+- Expected Release Date (`release_date`): Date anticipated to have this feature ready for release.
+- Expected Completion Date: If already completed, it can be released in an official version.
 
 ### UI to read roadmap on browser o webapp
 

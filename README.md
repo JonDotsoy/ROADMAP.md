@@ -25,7 +25,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Expected Release Date |
-| --- | --- |
+| ------- | --------------------- |
 
 ### ⏳ Planned
 
@@ -37,7 +37,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Status | Expected Completion Date |
-| --- | --- | --- |
+| ------- | ------ | ------------------------ |
 
 ## Proposals
 
@@ -48,7 +48,6 @@ The following proposal outlines a potential feature and its expected timeline:
 
 [Description]
 -->
-
 ```
 
 If you want to get started quickly, you can also copy the template directly from this repository using the following command:

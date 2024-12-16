@@ -16,7 +16,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Expected Release Date |
-| --- | --- |
+| ------- | --------------------- |
 
 ### ⏳ Planned
 
@@ -28,7 +28,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Status | Expected Completion Date |
-| --- | --- | --- |
+| ------- | ------ | ------------------------ |
 
 ## Proposals
 

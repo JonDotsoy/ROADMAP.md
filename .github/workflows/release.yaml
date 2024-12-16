@@ -44,4 +44,3 @@ jobs:
         run: gh workflow run --repo JonDotsoy/homebrew-core refresh.yml -F repo_name=JonDotsoy/ROADMAP.md -F tag=${{ steps.release-please.outputs.tag_name }}
         env:
           GH_TOKEN: ${{ secrets.REFRESH_GITHUB_TOKEN }}
-

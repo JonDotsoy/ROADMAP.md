@@ -58,7 +58,7 @@ export class RoadmapFile {
   private constructor(
     private url: LikeURL,
     private markdown: Root,
-  ) { }
+  ) {}
 
   async indexListOfContent() {
     const elements: ContentElement[] = [];

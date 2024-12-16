@@ -39,5 +39,7 @@
   "scripts": {
     "prepack": "make"
   },
-  "files": ["libs"]
+  "files": [
+    "libs"
+  ]
 }

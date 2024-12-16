@@ -1,4 +1,11 @@
-import { flag, flags, isBooleanAt, isStringAt, rule, type Rule } from "@jondotsoy/flags";
+import {
+  flag,
+  flags,
+  isBooleanAt,
+  isStringAt,
+  rule,
+  type Rule,
+} from "@jondotsoy/flags";
 import { RoadmapFile } from "@jondotsoy/roadmap-parse";
 import * as path from "node:path";
 import { styleText } from "@jondotsoy/style-text";
@@ -32,8 +39,8 @@ export const describe = async (args: string[]) => {
   type DescribeOptions = {
     cwd: string;
     pattern: string;
-    json: boolean
-    yaml: boolean
+    json: boolean;
+    yaml: boolean;
     // noDepth: boolean;
   };
 
