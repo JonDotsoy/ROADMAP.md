@@ -1,0 +1,87 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registry updates roadmap and snapshots correctly: 2e3ac51e1af17952d98bc2513b5a1b9c5b37686eca8197ebf3faba1754c9774a 1`] = `"{"owner":"cat","project_id":"foo","default_branch":"main","branches":{"main":{"latest":"1.0.2","versions":["1.0.2"]}}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: ed00797b49c7f9c509e57bb53de0e3251ced23e31677b01121fee5681ed17100 1`] = `"{"owner":"me","project_id":"foo","version":"1.0.2","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: a3eb8a2fa06af14ad819a5eae0069e1024af71887d5f0261f8b79f441f97c8c2 1`] = `"{"owner":"cat","project_id":"tal","default_branch":"main","branches":{"main":{"latest":"1.0.3","versions":["1.0.2","1.0.3"]}}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: b9349519e6935136539caa3c0373baf73d7f2e9771a4ffec80595390c55115f3 1`] = `"{"owner":"cat","project_id":"taz","version":"1.0.2","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: 7d8450f3cb29c7a701b430ae5cb89e04b7896cffbaaedf098182ca84f718a5b4 1`] = `"{"owner":"me","project_id":"foo","default_branch":"main","branches":{"main":{"latest":"1.0.2","versions":["1.0.0","1.0.1","1.0.2"]}}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: db2215658f8d7fbef7642a6a716976e576f2e84929b9dbecdb313b4a663de463 1`] = `"{"owner":"me","project_id":"foo","version":"1.0.0","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: 67e28d641f86882d62f3f1f2e9fa4cb1b70b19f191b070eeaede4c4ca6f055e8 1`] = `"{"owner":"cat","project_id":"taz","default_branch":"main","branches":{"main":{"latest":"1.0.2","versions":["1.0.2"]}}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: 2cb0edbca80e26e3fe36125ae88214d0b4766d36802016d3b0576eb276d55c95 1`] = `"{"owner":"cat","project_id":"tal","version":"1.0.3","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: 1336523d403775ef5f117916d14a09476775b46d8637059d8714dd2d05832813 1`] = `"{"owner":"me","project_id":"foo","version":"1.0.1","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: 81f207974821c36ff0ac44872580206b804c7a852905d5b6727c856293b7771c 1`] = `"{"owner":"cat","project_id":"tal","version":"1.0.2","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry updates roadmap and snapshots correctly: e54fb06489ad0617553d1050cf1bd671928b3926285eec8c55e9719cccdd503b 1`] = `"{"owner":"cat","project_id":"foo","version":"1.0.2","branch":"main","created_at":1000,"roadmap_data":{"foo":"bar"}}"`;
+
+exports[`Registry  1`] = `
+{
+  "branches": {
+    "feature/foo": {
+      "branch": "feature/foo",
+      "created_at": 1000,
+      "owner": "me",
+      "project_id": "foo",
+      "roadmap_data": {
+        "foo": "bar",
+      },
+      "version": "1.0.0",
+    },
+    "feature/taz": {
+      "branch": "feature/taz",
+      "created_at": 1000,
+      "owner": "me",
+      "project_id": "foo",
+      "roadmap_data": {
+        "foo": "bar",
+      },
+      "version": "1.0.0",
+    },
+    "main": {
+      "branch": "main",
+      "created_at": 1000,
+      "owner": "me",
+      "project_id": "foo",
+      "roadmap_data": {
+        "foo": "bar",
+      },
+      "version": "1.0.2",
+    },
+  },
+  "manifest": {
+    "branches": {
+      "feature/foo": {
+        "latest": "1.0.0",
+        "versions": [
+          "1.0.0",
+        ],
+      },
+      "feature/taz": {
+        "latest": "1.0.0",
+        "versions": [
+          "1.0.0",
+        ],
+      },
+      "main": {
+        "latest": "1.0.2",
+        "versions": [
+          "1.0.0",
+          "1.0.1",
+          "1.0.2",
+        ],
+      },
+    },
+    "default_branch": "main",
+    "owner": "me",
+    "project_id": "foo",
+  },
+}
+`;

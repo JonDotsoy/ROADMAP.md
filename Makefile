@@ -1,4 +1,4 @@
-PRETTIER = bunx PRETTIER
+PRETTIER = bunx --bun prettier
 BUN = bun
 
 .PHONY: all
