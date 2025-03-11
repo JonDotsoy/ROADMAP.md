@@ -1,4 +1,4 @@
-import { test, expect } from "bun:test";
+import { it, expect } from "bun:test";
 import { RoadmapFile } from "./roadmap_file.js";
 import fs from "fs/promises";
 
@@ -11,7 +11,7 @@ const demoFile = async (body: string) => {
   return f;
 };
 
-test("should create a new instance of RoadmapFile", async () => {
+it("should create a new instance of RoadmapFile", async () => {
   expect(
     await RoadmapFile.fromFile(
       await demoFile(
@@ -21,7 +21,7 @@ test("should create a new instance of RoadmapFile", async () => {
   ).toBeInstanceOf(RoadmapFile);
 });
 
-test("should return a list of tasks", async () => {
+it("should return a list of tasks", async () => {
   const roadmap = await RoadmapFile.fromFile(
     await demoFile(
       "## Proposals\n\n" +
@@ -33,7 +33,7 @@ test("should return a list of tasks", async () => {
   expect(await roadmap.listTasks()).toHaveLength(2);
 });
 
-test("should return the title of the first task", async () => {
+it("should return the title of the first task", async () => {
   const roadmap = await RoadmapFile.fromFile(
     await demoFile(
       "## Proposals\n\n" + "### First task\n\n" + "### Second task\n\n",
@@ -42,7 +42,7 @@ test("should return the title of the first task", async () => {
   expect(await roadmap.listTasks()).toContainEqual({ title: "First task" });
 });
 
-test("should correctly parse and extract roadmap tasks from a Markdown file", async () => {
+it("should correctly parse and extract roadmap tasks from a Markdown file", async () => {
   const roadmap = await RoadmapFile.fromFile(
     await demoFile(
       "## Roadmap\n" +
@@ -77,7 +77,7 @@ test("should correctly parse and extract roadmap tasks from a Markdown file", as
   ]);
 });
 
-test.only("should parse roadmap", async () => {
+it.only("should parse roadmap", async () => {
   const roadmap = await RoadmapFile.fromFile(
     await demoFile(
       "" +
