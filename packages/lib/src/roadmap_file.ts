@@ -4,6 +4,7 @@ import { gfmTableFromMarkdown } from "mdast-util-gfm-table";
 import { gfmTable } from "micromark-extension-gfm-table";
 import * as mdastUtilFromMarkdown from "mdast-util-from-markdown";
 import * as mdastUtilToMarkdown from "mdast-util-to-markdown";
+import type { TaskDTO } from "./dtos/TaskDTO";
 
 const toRef = (str: string) => str.toLocaleLowerCase().replace(/\W/g, "-");
 
@@ -178,7 +179,7 @@ export class RoadmapFile {
     ];
   }
 
-  async listTasks() {
+  async listTasks(): Promise<TaskDTO[]> {
     const infoTasks = await this.infoTasks();
     const proposalsHeader = this.markdown.children.find(
       (n) => n.type === "heading" && /proposals/i.test(nodeToTextContent(n)),
