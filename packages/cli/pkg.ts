@@ -1,1 +1,1 @@
-export const pkg = { version: "0.2.0-beta.1" };
+export const pkg = { version: "0.3.0-beta.1" };
