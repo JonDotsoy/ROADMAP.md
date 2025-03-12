@@ -10,7 +10,7 @@
       "prerelease": false
     },
     "packages/lib": {
-      "name": "roadmap-parse",
+      "package-name": "roadmap-parse",
       "changelog-path": "CHANGELOG.md",
       "release-type": "node",
       "bump-minor-pre-major": false,
