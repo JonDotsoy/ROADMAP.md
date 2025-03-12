@@ -30,7 +30,7 @@ The following roadmap provides an overview of the planned features, their expect
 | Feature                                                                                                                               | Status      | Expected Completion Date |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------ |
 | [Client for Terminal: Read ROADMAP.md and Describe Tasks Annotated](#client-for-terminal-read-roadmapmd-and-describe-tasks-annotated) | In Progress | August 2024              |
-| [Develop Markdown Parser Library](#develop-markdown-parser-library)                                                                   | On Design   | September 2024           |
+| [Develop Markdown Parser Library](#develop-markdown-parser-library)                                                                   | In Progress | March 2025               |
 | [UI to read roadmap on browser o webapp](#ui-to-read-roadmap-on-browser-o-webapp)                                                     | On design   | September 2024           |
 
 ## Proposals
