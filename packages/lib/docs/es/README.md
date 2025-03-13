@@ -110,10 +110,34 @@ import { RoadmapFile } from "@jondotsoy/roadmap-parse";
 
 ### Leer un Archivo ROADMAP.md
 
-La clase `RoadmapFile` proporciona un método estático `fromFile(filePath: string)` que lee un archivo `ROADMAP.md` y crea una instancia de `RoadmapFile`. Este método devuelve una Promesa que se resuelve con la instancia de `RoadmapFile` una vez que el archivo ha sido leído y analizado.
+La clase `RoadmapFile` proporciona el método estático `fromFile`. Este método tiene dos formas de uso:
+
+1.  **Desde un archivo en disco:** `fromFile(filePath: string)` lee un archivo `ROADMAP.md` ubicado en la ruta `filePath` y crea una instancia de `RoadmapFile`.
+2.  **Desde un buffer en memoria:** `fromFile(filePath: string, buffer: Uint8Array)` lee el contenido de `ROADMAP.md` directamente desde un `Uint8Array` que contiene el contenido del archivo en memoria. Esta opción es útil cuando ya tienes el contenido del roadmap en memoria y quieres evitar la necesidad de escribirlo en disco.
+
+Ambas formas del método `fromFile` devuelven una Promesa que se resuelve con la instancia de `RoadmapFile` una vez que el contenido ha sido leído y analizado.
+
+**Ejemplo de lectura desde un buffer:**
 
 ```typescript
-const roadmapFile = await RoadmapFile.fromFile("./ROADMAP.md");
+import { RoadmapFile } from "@jondotsoy/roadmap-parse";
+import fs from "node:fs/promises"; // o 'fs' si usas CommonJS
+
+async function main() {
+  try {
+    const readmePath = "./README.md"; // Reemplaza con la ruta a tu archivo ROADMAP.md
+    const roadmapBuffer = await fs.readFile(readmePath); // Lee el archivo a un buffer (Uint8Array)
+
+    const roadmapFile = await RoadmapFile.fromFile(readmePath, roadmapBuffer); // Usa fromFile con el buffer
+    const tasks = await roadmapFile.listTasks();
+
+    console.log(JSON.stringify(tasks, null, 2));
+  } catch (error) {
+    console.error("Error al procesar ROADMAP.md:", error);
+  }
+}
+
+main();
 ```
 
 ### Listar las Tareas
