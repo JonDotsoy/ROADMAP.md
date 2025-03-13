@@ -110,10 +110,34 @@ import { RoadmapFile } from "@jondotsoy/roadmap-parse";
 
 ### Reading a ROADMAP.md File
 
-The `RoadmapFile` class provides a static method `fromFile(filePath: string)` that reads a `ROADMAP.md` file and creates a `RoadmapFile` instance. This method returns a Promise that resolves with the `RoadmapFile` instance once the file has been read and parsed.
+The `RoadmapFile` class provides the static method `fromFile`. This method has two ways of being used:
+
+1.  **From a file on disk:** `fromFile(filePath: string)` reads a `ROADMAP.md` file located at `filePath` and creates a `RoadmapFile` instance.
+2.  **From an in-memory buffer:** `fromFile(filePath: string, buffer: Uint8Array)` reads the content of `ROADMAP.md` directly from a `Uint8Array` that contains the file content in memory. This option is useful when you already have the roadmap content in memory and want to avoid the need to write it to disk.
+
+Both forms of the `fromFile` method return a Promise that resolves with the `RoadmapFile` instance once the content has been read and parsed.
+
+**Example of reading from a buffer:**
 
 ```typescript
-const roadmapFile = await RoadmapFile.fromFile("./ROADMAP.md");
+import { RoadmapFile } from "@jondotsoy/roadmap-parse";
+import fs from "node:fs/promises"; // or 'fs' if you use CommonJS
+
+async function main() {
+  try {
+    const readmePath = "./README.md"; // Replace with the path to your ROADMAP.md file
+    const roadmapBuffer = await fs.readFile(readmePath); // Read the file into a buffer (Uint8Array)
+
+    const roadmapFile = await RoadmapFile.fromFile(readmePath, roadmapBuffer); // Use fromFile with the buffer
+    const tasks = await roadmapFile.listTasks();
+
+    console.log(JSON.stringify(tasks, null, 2));
+  } catch (error) {
+    console.error("Error processing ROADMAP.md:", error);
+  }
+}
+
+main();
 ```
 
 ### Listing Tasks
@@ -138,7 +162,7 @@ interface TaskDTO {
 ```
 
 - **`title`**: Always present and extracted from the "Feature" column of both tables ("Active" and "Planned").
-- **`status`**: Present **only** for tasks extracted from th`e "Planned" table and corresponds to the value of the "Status" column.
+- **`status`**: Present **only** for tasks extracted from the "Planned" table and corresponds to the value of the "Status" column.
 - **`expectedCompletionDate`**: Present **only** for tasks extracted from the "Planned" table and corresponds to the value of the "Expected Completion Date" column.
 - **`expectedReleaseDate`**: Present **only** for tasks extracted from the "Active" table and corresponds to the value of the "Expected Release Date" column.
 
