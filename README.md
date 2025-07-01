@@ -88,6 +88,23 @@ $ roadmap init
 # Roadmap initialized successfully!
 ```
 
+## Use Cases
+
+User stories are stored under the `use-cases` folder using the `.feature` extension. These files are written in **Gherkin** to clearly describe the desired behaviour.
+
+Each file follows the pattern `UC-<number>-<short-title>.feature` and defines a `Feature` with one or more `Scenario` sections. The `<number>` part increments sequentially without leading zeroes (e.g. `UC-1`, `UC-2`).
+
+Example:
+For instance, `use-cases/UC-1-show-tasks.feature` documents how the CLI lists tasks.
+
+```gherkin
+Feature: Show tasks from roadmap
+  Scenario: List tasks
+    Given a ROADMAP.md with pending tasks
+    When I run `roadmap`
+    Then the CLI outputs the tasks summary
+```
+
 ## License
 
 This project is published under the MIT License. You can view the full text of the license in the file [LICENSE](./LICENSE).
