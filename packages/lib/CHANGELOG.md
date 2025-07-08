@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/JonDotsoy/ROADMAP.md/compare/roadmap-parse-v0.2.0...roadmap-parse-v0.3.0) (2025-07-08)
+
+
+### Features
+
+* **git-directory-tools:** Implement git directory tools ([ed2df5f](https://github.com/JonDotsoy/ROADMAP.md/commit/ed2df5f56eb4441e2ea5a95018fb1e81555a8ea5))
+
 ## [0.2.0](https://github.com/JonDotsoy/ROADMAP.md/compare/roadmap-parse-v0.1.2...roadmap-parse-v0.2.0) (2025-03-12)
 
 
